@@ -1,0 +1,14 @@
+requests
+beautifulsoup4
+lxml
+pandas
+numpy
+yfinance
+transformers
+torch
+scikit-learn
+matplotlib
+seaborn
+jupyter
+ipykernel
+tqdm
