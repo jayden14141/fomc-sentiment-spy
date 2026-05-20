@@ -2,15 +2,7 @@
   "name": "fomc-sentiment-spy",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
-  },
-  "mounts": [
-    "source=claude-code-config-${devcontainerId},target=/home/vscode/.claude,type=volume"
-  ],
-  "containerEnv": {
-    "CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
+    "ghcr.io/devcontainers/features/node:1": {}
   },
   "customizations": {
     "vscode": {
@@ -26,6 +18,6 @@
       }
     }
   },
-  "postCreateCommand": "pip install --user -r requirements.txt",
+  "postCreateCommand": "pip install -r requirements.txt && python -m ipykernel install --user --name fomc --display-name 'Python (fomc)' && npm install -g @anthropic-ai/claude-code",
   "remoteUser": "vscode"
 }
